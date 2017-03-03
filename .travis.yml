@@ -12,3 +12,13 @@ before_script:
 script:
   - mix credo --format=oneline || echo "credo failures :("
   - mix test
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: YtePWhj7eR11LYvRUOpLnSZBAVXylr60LqrxU4TV0d5v3iT6TIKAkT4NiuVhfQ0RVd4ImG8iHnsEJ3zYCppz6vTOyGkrQJ+pjIWYZEsK5VK501waJsBpGKsmhY+O3lIB5t5RGVFSmZQFIKMNHsiQn8FFp5pI2EjMSnuNd6ZSI9WRDgxS1sdXmIE96t5/X9tQxr7+S32NhGj+Y6NoGTZVkixilN1GiYDgcPgi1nPrFkuKQiyrz78UQqEpv1QRswcKnRlyXMUZbYcLPRyi/T9SY8JBG7+eQulFUBAjAxz58kvv3UiMnmVngLUyyXyZdd/upkoIXp1gZCVYb5R8/gDSU6eyGCjQdg/Jr0pSPrdPGHPmANghHjAV1VmhEMJVqAIg1grCuIBBXPs+I13REzLOyGqrWAo8YqpuiD+8rSZHnbWGZozmYG+twsQWkLtnthb/kajHj+JSveaYYcIYnMqCB2kvcPgCI027TKfrwf6/QS8nAJq5GuRejFHXsHXyj9cZ9HYKlCTbeu22kbKg03Tp4D9IyMJqXLWtblgWPFHBpKkUXvOoSVrrIEPf54pHETkgeWIKqvhm9dpRUiTDiHK3YspjmczGc3LUXeUI/ZxibjcKrpZVQvIJMoMmxS/4U0aWZte2Yb/rc0RZ9c5kbP1lSTuU+8SRg0PRoP6Fafvyd+s=
+  app: exfattrack
+  on:
+    branch: master
+    repo: verdammelt/exfattrack
+  run: "mix ecto.migrate"
