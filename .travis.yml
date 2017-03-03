@@ -3,6 +3,12 @@ language: elixir
 elixir:
   - 1.4.2
 
+env:
+  - MIX_ENV=test
+
+before_script:
+  - mix ecto.create
+
 script:
-  - mix credo
+  - mix credo --format=oneline || echo "credo failures :("
   - mix test
