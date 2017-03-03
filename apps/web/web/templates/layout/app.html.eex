@@ -4,26 +4,31 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Weight Tracking Application">
+    <meta name="author" content="Mark Simpson">
 
-    <title>Hello Web!</title>
+    <title>The Fat Track</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
   <body>
     <div class="container">
       <header class="header">
-        <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-          </ul>
+        <nav role="navigation" class="navbar navbar-default">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">The Fat Track</a>
+          </div>
         </nav>
-        <span class="logo"></span>
       </header>
 
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+      <p class='alert alert-info <%= get_flash(@conn, :info) || "hidden" %>'
+         role="alert">
+        <%= get_flash(@conn, :info) %>
+      </p>
+      <p class='alert alert-danger <%= get_flash(@conn, :error) || "hidden" %>'
+         role="alert">
+        <%= get_flash(@conn, :error) %>
+      </p>
 
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
