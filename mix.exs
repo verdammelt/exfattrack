@@ -20,7 +20,7 @@ defmodule FatTrack.Mixfile do
 
   defp deps do
     [
-      {:credo, "~> 0.5", only: [:dev, :test]},
+      {:credo, "~> 0.5", only: [:dev, :test], override: true},
       {:dialyxir, "~> 0.5", only: [:dev], runtime: false}
     ]
   end
