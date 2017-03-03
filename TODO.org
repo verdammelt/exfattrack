@@ -1,0 +1,46 @@
+* Deploy
+** TODO Set up buildpacks
+[2017-03-03 Fri 09:50]
+** Fix prod secrets setup for Heroku
+[2017-03-03 Fri 09:50]
+* Existing Data
+** Copy existing data from sqlite3 to Heroku pg db.
+[2017-03-03 Fri 09:51]
+* Web App
+** TODO Replace stub pages with Fat Track stub page.
+[2017-03-03 Fri 09:50]
+** Weights
+[2017-03-03 Fri 09:52]
+*** Show list of weights
+[2017-03-03 Fri 09:54]
+*** Show weight graph
+[2017-03-03 Fri 09:54]
+*** Form to allow adding/editing weight
+[2017-03-03 Fri 09:54]
+*** Can delete a weight
+[2017-03-03 Fri 09:54]
+** User Login
+[2017-03-03 Fri 09:52]
+*** r/d packages to help with this (devise for elixir)
+[2017-03-03 Fri 09:52]
+*** User can create account
+[2017-03-03 Fri 09:52]
+*** User can reset password
+[2017-03-03 Fri 09:53]
+*** user can retrieve forgotten password
+[2017-03-03 Fri 09:53]
+*** user can login
+[2017-03-03 Fri 09:53]
+*** User only sees their own weights
+[2017-03-03 Fri 09:53]
+** BMI
+[2017-03-03 Fri 09:54]
+** Notes on weights
+[2017-03-03 Fri 09:54]
+** Filtering display by date rage
+[2017-03-03 Fri 09:54]
+* Misc
+** TODO Better name for db than 'web'
+** TODO Separate out Ecto Repo into its own app
+** TODO Fix credo reported problems
+[2017-03-03 Fri 09:50]
