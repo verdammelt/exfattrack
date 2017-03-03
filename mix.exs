@@ -9,6 +9,7 @@ defmodule FatTrack.Mixfile do
       aliases: aliases(),
       deps: deps(),
       dialyzer: [plt_add_deps: :transitive],
+      elixirc_options: [warnings_as_errors: true]
     ]
   end
 

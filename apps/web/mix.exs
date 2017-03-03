@@ -10,6 +10,7 @@ defmodule Web.Mixfile do
      lockfile: "../../mix.lock",
      elixir: "~> 1.2",
      elixirc_paths: elixirc_paths(Mix.env),
+     elixirc_options: [warnings_as_errors: true],
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
@@ -23,7 +24,7 @@ defmodule Web.Mixfile do
   def application do
     [mod: {Web, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :coherence]]
   end
 
   # Specifies which paths to compile per environment.
@@ -40,6 +41,9 @@ defmodule Web.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
+
+      {:coherence, "~> 0.3"},
+
       {:credo, path: "../../deps/credo", only: [:dev, :test]}
     ]
   end

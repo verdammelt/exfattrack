@@ -9,3 +9,11 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+Web.Repo.delete_all Web.User
+
+%Web.User{}
+|> Web.User.changeset(%{name: "Test User",
+                      email: "testuser@example.com",
+                      password: "secret",
+                      password_confirmation: "secret"})
+|> Web.Repo.insert!
