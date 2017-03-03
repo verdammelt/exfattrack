@@ -22,7 +22,11 @@ defmodule Web.Repo.Migrations.CreateCoherenceUser do
       add :locked_at, :datetime
       # unlockable_with_token
       add :unlock_token, :string
-      
+      # confirmable
+      add :confirmation_token, :string
+      add :confirmed_at, :datetime
+      add :confirmation_sent_at, :datetime
+
       timestamps()
     end
     create unique_index(:users, [:email])
