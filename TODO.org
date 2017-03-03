@@ -43,26 +43,54 @@ CLOSED: [2017-03-03 Fri 11:24]
 [2017-03-03 Fri 09:54]
 ** User Login
 [2017-03-03 Fri 09:52]
-*** r/d packages to help with this (devise for elixir)
+*** DONE r/d packages to help with this (devise for elixir)
+CLOSED: [2017-03-03 Fri 16:39]
+:LOGBOOK:
+- State "DONE"       from              [2017-03-03 Fri 16:39]
+:END:
 [2017-03-03 Fri 09:52]
-*** User can create account
+*** DONE User can create account
+CLOSED: [2017-03-03 Fri 16:39]
+:LOGBOOK:
+- State "DONE"       from              [2017-03-03 Fri 16:39]
+:END:
 [2017-03-03 Fri 09:52]
-*** User can reset password
+*** DONE User can reset password
+CLOSED: [2017-03-03 Fri 17:19]
+:LOGBOOK:
+- State "DONE"       from              [2017-03-03 Fri 17:19]
+:END:
 [2017-03-03 Fri 09:53]
-*** user can retrieve forgotten password
+*** DONE user can retrieve forgotten password
+CLOSED: [2017-03-03 Fri 17:19]
+:LOGBOOK:
+- State "DONE"       from              [2017-03-03 Fri 17:19]
+:END:
 [2017-03-03 Fri 09:53]
-*** user can login
+*** DONE user can login
+CLOSED: [2017-03-03 Fri 16:39]
+:LOGBOOK:
+- State "DONE"       from              [2017-03-03 Fri 16:39]
+:END:
 [2017-03-03 Fri 09:53]
 *** User only sees their own weights
 [2017-03-03 Fri 09:53]
-** BMI
-[2017-03-03 Fri 09:54]
-** Notes on weights
-[2017-03-03 Fri 09:54]
-** Filtering display by date rage
-[2017-03-03 Fri 09:54]
+*** DONE Confirmation etc. emails
+CLOSED: [2017-03-03 Fri 17:19]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2017-03-03 Fri 17:19]
+:END:
+[2017-03-03 Fri 16:39]
+*** TODO page layout problems
+:LOGBOOK:
+- State "TODO"       from              [2017-03-03 Fri 17:20]
+:END:
+[2017-03-03 Fri 16:39]
+
 * Misc
 ** TODO Better name for db than 'web'
 ** TODO Separate out Ecto Repo into its own app
 ** TODO Fix credo reported problems
 [2017-03-03 Fri 09:50]
+** TODO elixirc warnings should be errors.
+[2017-03-03 Fri 16:39]
