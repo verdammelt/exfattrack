@@ -10,7 +10,7 @@ before_script:
   - mix ecto.create
 
 script:
-  - mix credo --format=oneline || echo "credo failures :("
+  - mix credo --format=oneline
   - mix test
 
 deploy:
