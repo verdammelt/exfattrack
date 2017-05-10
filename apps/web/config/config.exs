@@ -7,7 +7,7 @@ use Mix.Config
 
 # General application configuration
 config :web,
-  ecto_repos: [Web.Repo]
+  ecto_repos: [FatTrack.DB.Repo]
 
 # Configures the endpoint
 config :web, Web.Endpoint,
@@ -17,6 +17,8 @@ config :web, Web.Endpoint,
   pubsub: [name: Web.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
+config :phoenix, :generators, migration: false
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
@@ -25,7 +27,7 @@ config :logger, :console,
 # %% Coherence Configuration %%   Don't remove this line
 config :coherence,
   user_schema: Web.User,
-  repo: Web.Repo,
+  repo: FatTrack.DB.Repo,
   module: Web,
   logged_out_url: "/",
   email_from_name: "Mark Simpson",

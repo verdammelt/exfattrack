@@ -16,7 +16,7 @@ defmodule Web.ModelCase do
 
   using do
     quote do
-      alias Web.Repo
+      alias FatTrack.DB.Repo
 
       import Ecto
       import Ecto.Changeset
@@ -26,10 +26,10 @@ defmodule Web.ModelCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Web.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(FatTrack.DB.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Web.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(FatTrack.DB.Repo, {:shared, self()})
     end
 
     :ok

@@ -30,7 +30,7 @@ defmodule Web.Web do
     quote do
       use Phoenix.Controller
 
-      alias Web.Repo
+      alias FatTrack.DB.Repo
       import Ecto
       import Ecto.Query
 
@@ -65,7 +65,7 @@ defmodule Web.Web do
     quote do
       use Phoenix.Channel
 
-      alias Web.Repo
+      alias FatTrack.DB.Repo
       import Ecto
       import Ecto.Query
       import Web.Gettext
