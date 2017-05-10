@@ -39,6 +39,7 @@ config :coherence, Web.Coherence.Mailer,
 # %% End Coherence Configuration %%
 
 config :coherence,
+  site_name: "The Fat Track",
   layout: {Web.LayoutView, :app}
 
 # Import environment specific config. This must remain at the bottom
