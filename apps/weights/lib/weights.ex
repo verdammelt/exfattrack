@@ -3,16 +3,12 @@ defmodule Weights do
   Documentation for Weights.
   """
 
-  @doc """
-  Hello world.
+  alias FatTrack.DB.Repo
 
-  ## Examples
-
-      iex> Weights.hello
-      :world
-
-  """
-  def hello do
-    :world
+  def for_user(user_id) do
+    Weights.User |>
+      Repo.get(user_id) |>
+      Repo.preload([:weights]) |>
+      Map.get(:weights)
   end
 end

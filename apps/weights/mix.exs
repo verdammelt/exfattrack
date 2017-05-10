@@ -12,6 +12,7 @@ defmodule Weights.Mixfile do
      elixirc_options: [warnings_as_errors: true],
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     aliases: aliases(),
      deps: deps()]
   end
 
@@ -20,13 +21,22 @@ defmodule Weights.Mixfile do
   # Type "mix help compile.app" for more information
   def application do
     # Specify extra applications you'll use from Erlang/Elixir
-    [extra_applications: [:logger],
+    [extra_applications: [:logger, :postgrex, :db],
      mod: {Weights.Application, []}]
   end
 
   defp deps do
     [
+      {:db, in_umbrella: true},
+
       {:credo, path: "../../deps/credo", only: [:dev, :test]}
+    ]
+  end
+
+  defp aliases do
+    [
+      "ecto.setup": ["ecto.create --quiet", "ecto.migrate"],
+      "test": ["ecto.setup", "test"]
     ]
   end
 end
