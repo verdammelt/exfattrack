@@ -14,6 +14,6 @@ config :web, Web.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  database: "web_test",
+  database: "exfattrack_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
