@@ -20,7 +20,7 @@ defmodule Web.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
 
-      alias Web.Repo
+      alias FatTrack.DB.Repo
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
@@ -33,10 +33,10 @@ defmodule Web.ConnCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Web.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(FatTrack.DB.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Web.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(FatTrack.DB.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}
