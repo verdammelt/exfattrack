@@ -4,25 +4,40 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Weight Tracking Application">
+    <meta name="author" content="Mark Simpson">
 
-    <title>Hello Admin1!</title>
+    <title>The Fat Track</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
   <body>
     <div class="container">
       <header class="header">
-        <nav role="navigation">
+        <nav role="navigation" class="navbar navbar-default">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">The Fat Track</a>
+          </div>
+          <ul class="nav navbar-nav nav-pills pull-right">
+            <%= if Coherence.current_user(@conn) do %>
+              <%= if @conn.assigns[:remembered] do %>
+                <li style="color: red;">!!</li>
+              <% end %>
+              <li><%= Web.Coherence.ViewHelpers.invitation_link(@conn) %>
+            <% end %>
+            <%= Web.Coherence.ViewHelpers.coherence_links(@conn, :layout) %>
+          </ul>
         </nav>
-        <span class="logo"></span>
       </header>
 
-      <h1>wrong one.</h1>
-
-     <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+      <p class='alert alert-info <%= get_flash(@conn, :info) || "hidden" %>'
+         role="alert">
+        <%= get_flash(@conn, :info) %>
+      </p>
+      <p class='alert alert-danger <%= get_flash(@conn, :error) || "hidden" %>'
+         role="alert">
+        <%= get_flash(@conn, :error) %>
+      </p>
 
       <main role="main">
         <%= render @view_module, @view_template, assigns %>

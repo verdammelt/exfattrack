@@ -27,7 +27,6 @@ config :coherence,
   user_schema: Web.User,
   repo: Web.Repo,
   module: Web,
-  layout: {Web.LayoutView, :app},
   logged_out_url: "/",
   email_from_name: "Mark Simpson",
   email_from_email: "verdammelt+fattrack@gmail.com",
@@ -38,6 +37,9 @@ config :coherence, Web.Coherence.Mailer,
   adapter: Swoosh.Adapters.Sendgrid,
   api_key: System.get_env("SENDGRID_API_KEY")
 # %% End Coherence Configuration %%
+
+config :coherence,
+  layout: {Web.LayoutView, :app}
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
