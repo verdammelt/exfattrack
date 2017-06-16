@@ -3,7 +3,8 @@ defmodule WeightsTest do
   doctest Weights
 
   alias FatTrack.DB.Repo
-  alias Weights.DB.Weight
+  alias Weights.DB.Weight, as: DBWeight
+  alias Weights.Weight
   alias Weights.DB.User
 
   setup do
@@ -17,8 +18,8 @@ defmodule WeightsTest do
 
   test "returns weight for user" do
     user = Repo.insert!(%User{})
-    expected_weights = [Repo.insert!(%Weight{user: user}),
-                        Repo.insert!(%Weight{user: user})]
+    expected_weights = [Repo.insert!(%DBWeight{user: user}),
+                        Repo.insert!(%DBWeight{user: user})]
 
     actual_weights = Weights.for_user(user.id)
 
@@ -28,10 +29,23 @@ defmodule WeightsTest do
   test "only returns weights for a user - not other users" do
     user = Repo.insert!(%User{})
     other_user = Repo.insert!(%User{})
-    user_weight = Repo.insert!(%Weight{user: user})
-    other_user_weight = Repo.insert!(%Weight{user: other_user})
+    user_weight = Repo.insert!(%DBWeight{user: user})
+    other_user_weight = Repo.insert!(%DBWeight{user: other_user})
 
     assert [user_weight.id] == ids(Weights.for_user(user.id))
     assert [other_user_weight.id] == ids(Weights.for_user(other_user.id))
+  end
+
+  test "returns a Weight.Weight struct not a DB struct" do
+    user = Repo.insert!(%User{})
+    db_weight = Repo.insert!(%DBWeight{user: user, date: ~D[2000-01-01],
+                                       weight: 190.0, trend: 200.0})
+
+    weights = Weights.for_user(user.id)
+
+    assert weights == [%Weight{id: db_weight.id,
+                               date: db_weight.date,
+                               weight: db_weight.weight,
+                               trend: db_weight.trend}]
   end
 end
