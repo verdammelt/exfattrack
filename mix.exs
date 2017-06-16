@@ -15,7 +15,10 @@ defmodule FatTrack.Mixfile do
 
   defp aliases do
     [
-      "dialyzer": "dialyzer --halt-exit-status"
+      "dialyzer": "dialyzer --halt-exit-status",
+
+      "ecto.setup": ["ecto.create", "ecto.migrate", "ecto.seed"],
+      "ecto.reset": ["ecto.drop", "ecto.setup"],
     ]
   end
 
