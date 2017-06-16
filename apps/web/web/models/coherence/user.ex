@@ -1,5 +1,5 @@
-defmodule Web.User do
-  use Web.Web, :model
+defmodule FatTrack.Web.User do
+  use FatTrack.Web.Web, :model
   use Coherence.Schema
 
   schema "users" do

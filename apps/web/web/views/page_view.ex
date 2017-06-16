@@ -1,3 +1,3 @@
-defmodule Web.PageView do
-  use Web.Web, :view
+defmodule FatTrack.Web.PageView do
+  use FatTrack.Web.Web, :view
 end

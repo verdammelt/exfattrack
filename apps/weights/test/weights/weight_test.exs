@@ -1,4 +1,4 @@
-defmodule WeightTest do
+defmodule FatTrack.WeightTest do
   use ExUnit.Case
-  doctest Weights.Weight
+  doctest FatTrack.Weights.Weight
 end

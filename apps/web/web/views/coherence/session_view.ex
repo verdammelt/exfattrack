@@ -1,5 +1,5 @@
 defmodule Coherence.SessionView do
-  use Web.Coherence.Web, :view
+  use FatTrack.Web.Coherence.Web, :view
 
 
 end

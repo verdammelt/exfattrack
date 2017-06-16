@@ -1,4 +1,4 @@
-defmodule Web.Coherence.ViewHelpers do
+defmodule FatTrack.Web.Coherence.ViewHelpers do
   @moduledoc """
   Helper functions for Coherence Views.
   """

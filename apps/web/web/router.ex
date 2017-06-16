@@ -1,5 +1,5 @@
-defmodule Web.Router do
-  use Web.Web, :router
+defmodule FatTrack.Web.Router do
+  use FatTrack.Web.Web, :router
   use Coherence.Router
 
   pipeline :browser do
@@ -34,13 +34,13 @@ defmodule Web.Router do
     coherence_routes :protected
   end
 
-  scope "/", Web do
+  scope "/" do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", FatTrack.Web.PageController, :index
   end
 
-  scope "/", Web do
+  scope "/" do
     pipe_through :protected
     # Add protected routes below
   end

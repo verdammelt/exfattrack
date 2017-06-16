@@ -1,4 +1,4 @@
-defmodule Weights.Application do
+defmodule FatTrack.Weights.Application do
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -16,7 +16,7 @@ defmodule Weights.Application do
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Weights.Supervisor]
+    opts = [strategy: :one_for_one, name: FatTrack.Weights.Supervisor]
     Supervisor.start_link(children, opts)
   end
 end

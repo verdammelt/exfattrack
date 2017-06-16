@@ -1,5 +1,5 @@
-defmodule Web.PageControllerTest do
-  use Web.ConnCase
+defmodule FatTrack.Web.PageControllerTest do
+  use FatTrack.Web.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

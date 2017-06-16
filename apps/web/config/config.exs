@@ -10,11 +10,11 @@ config :web,
   ecto_repos: [FatTrack.DB.Repo]
 
 # Configures the endpoint
-config :web, Web.Endpoint,
+config :web, FatTrack.Web.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "KwpOzFzhnciU5BHmo2/04HdnNUzm1qR3GxbQgIN84mPtxuL+YU+tnOoOQUvCxDoX",
-  render_errors: [view: Web.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Web.PubSub,
+  render_errors: [view: FatTrack.Web.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: FatTrack.Web.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 config :phoenix, :generators, migration: false
@@ -26,23 +26,23 @@ config :logger, :console,
 
 # %% Coherence Configuration %%   Don't remove this line
 config :coherence,
-  user_schema: Web.User,
+  user_schema: FatTrack.Web.User,
   repo: FatTrack.DB.Repo,
-  module: Web,
+  module: FatTrack.Web,
   logged_out_url: "/",
   email_from_name: "Mark Simpson",
   email_from_email: "verdammelt+fattrack@gmail.com",
   opts: [:trackable, :invitable, :rememberable, :authenticatable, :recoverable,
          :lockable, :unlockable_with_token, :registerable, :confirmable]
 
-config :coherence, Web.Coherence.Mailer,
+config :coherence, FatTrack.Web.Coherence.Mailer,
   adapter: Swoosh.Adapters.Sendgrid,
   api_key: System.get_env("SENDGRID_API_KEY")
 # %% End Coherence Configuration %%
 
 config :coherence,
   site_name: "The Fat Track",
-  layout: {Web.LayoutView, :app}
+  layout: {FatTrack.Web.LayoutView, :app}
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

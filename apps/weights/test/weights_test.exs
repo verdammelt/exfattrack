@@ -1,11 +1,11 @@
-defmodule WeightsTest do
+defmodule FatTrack.WeightsTest do
   use ExUnit.Case
-  doctest Weights
+  doctest FatTrack.Weights
 
   alias FatTrack.DB.Repo
-  alias Weights.DB.Weight, as: DBWeight
-  alias Weights.Weight
-  alias Weights.DB.User
+  alias FatTrack.Weights.DB.Weight, as: DBWeight
+  alias FatTrack.Weights.Weight
+  alias FatTrack.Weights.DB.User
 
   setup do
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(FatTrack.DB.Repo)
@@ -21,7 +21,7 @@ defmodule WeightsTest do
     expected_weights = [Repo.insert!(%DBWeight{user: user}),
                         Repo.insert!(%DBWeight{user: user})]
 
-    actual_weights = Weights.for_user(user.id)
+    actual_weights = FatTrack.Weights.for_user(user.id)
 
     assert ids(expected_weights) == ids(actual_weights)
   end
@@ -32,8 +32,8 @@ defmodule WeightsTest do
     user_weight = Repo.insert!(%DBWeight{user: user})
     other_user_weight = Repo.insert!(%DBWeight{user: other_user})
 
-    assert [user_weight.id] == ids(Weights.for_user(user.id))
-    assert [other_user_weight.id] == ids(Weights.for_user(other_user.id))
+    assert [user_weight.id] == ids(FatTrack.Weights.for_user(user.id))
+    assert [other_user_weight.id] == ids(FatTrack.Weights.for_user(other_user.id))
   end
 
   test "returns a Weight.Weight struct not a DB struct" do
@@ -41,7 +41,7 @@ defmodule WeightsTest do
     db_weight = Repo.insert!(%DBWeight{user: user, date: ~D[2000-01-01],
                                        weight: 190.0, trend: 200.0})
 
-    weights = Weights.for_user(user.id)
+    weights = FatTrack.Weights.for_user(user.id)
 
     assert weights == [%Weight{id: db_weight.id,
                                date: db_weight.date,

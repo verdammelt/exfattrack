@@ -1,4 +1,4 @@
-defmodule Web.ConnCase do
+defmodule FatTrack.Web.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -25,10 +25,10 @@ defmodule Web.ConnCase do
       import Ecto.Changeset
       import Ecto.Query
 
-      import Web.Router.Helpers
+      import FatTrack.Web.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint Web.Endpoint
+      @endpoint FatTrack.Web.Endpoint
     end
   end
 

@@ -1,3 +1,3 @@
-defmodule Web.PageViewTest do
-  use Web.ConnCase, async: true
+defmodule FatTrack.Web.PageViewTest do
+  use FatTrack.Web.ConnCase, async: true
 end

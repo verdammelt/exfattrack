@@ -1,4 +1,4 @@
-defmodule Web.ChannelCase do
+defmodule FatTrack.Web.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -27,7 +27,7 @@ defmodule Web.ChannelCase do
 
 
       # The default endpoint for testing
-      @endpoint Web.Endpoint
+      @endpoint FatTrack.Web.Endpoint
     end
   end
 

@@ -1,4 +1,4 @@
-defmodule Web.Coherence.Web do
+defmodule FatTrack.Web.Coherence.Web do
 
   def view do
     quote do
@@ -9,10 +9,10 @@ defmodule Web.Coherence.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import Web.Router.Helpers
-      import Web.ErrorHelpers
-      import Web.Gettext
-      import Web.Coherence.ViewHelpers
+      import FatTrack.Web.Router.Helpers
+      import FatTrack.Web.ErrorHelpers
+      import FatTrack.Web.Gettext
+      import FatTrack.Web.Coherence.ViewHelpers
 
     end
   end

@@ -1,7 +1,7 @@
-defmodule Web.Endpoint do
+defmodule FatTrack.Web.Endpoint do
   use Phoenix.Endpoint, otp_app: :web
 
-  socket "/socket", Web.UserSocket
+  socket "/socket", FatTrack.Web.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
@@ -38,5 +38,5 @@ defmodule Web.Endpoint do
     key: "_web_key",
     signing_salt: "Hc/Mckqe"
 
-  plug Web.Router
+  plug FatTrack.Web.Router
 end

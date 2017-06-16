@@ -1,3 +1,3 @@
-defmodule Web.Coherence.Mailer do
+defmodule FatTrack.Web.Coherence.Mailer do
   use Swoosh.Mailer, otp_app: :coherence
 end

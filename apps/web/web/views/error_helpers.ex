@@ -1,4 +1,4 @@
-defmodule Web.ErrorHelpers do
+defmodule FatTrack.Web.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -32,9 +32,9 @@ defmodule Web.ErrorHelpers do
     #     dgettext "errors", "is invalid"
     #
     if count = opts[:count] do
-      Gettext.dngettext(Web.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(FatTrack.Web.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(Web.Gettext, "errors", msg, opts)
+      Gettext.dgettext(FatTrack.Web.Gettext, "errors", msg, opts)
     end
   end
 end

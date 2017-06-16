@@ -22,7 +22,7 @@ defmodule Web.Mixfile do
   #
   # Type `mix help compile.app` for more information.
   def application do
-    [mod: {Web, []},
+    [mod: {FatTrack.Web, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy,
                              :logger, :gettext, :coherence, :phoenix_ecto, :db]]
   end

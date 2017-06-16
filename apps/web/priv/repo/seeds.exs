@@ -9,11 +9,11 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
-FatTrack.DB.Repo.delete_all Web.User
+FatTrack.DB.Repo.delete_all FatTrack.Web.User
 
-%Web.User{}
-|> Web.User.changeset(%{name: "Test User",
-                      email: "testuser@example.com",
-                      password: "secret",
-                      password_confirmation: "secret"})
+%FatTrack.Web.User{}
+|> FatTrack.Web.User.changeset(%{name: "Test User",
+                                email: "testuser@example.com",
+                                password: "secret",
+                                password_confirmation: "secret"})
 |> FatTrack.DB.Repo.insert!

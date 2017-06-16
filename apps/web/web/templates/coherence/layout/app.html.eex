@@ -23,9 +23,9 @@
               <%= if @conn.assigns[:remembered] do %>
                 <li style="color: red;">!!</li>
               <% end %>
-              <li><%= Web.Coherence.ViewHelpers.invitation_link(@conn) %>
+              <li><%= FatTrack.Web.Coherence.ViewHelpers.invitation_link(@conn) %>
             <% end %>
-            <%= Web.Coherence.ViewHelpers.coherence_links(@conn, :layout) %>
+            <%= FatTrack.Web.Coherence.ViewHelpers.coherence_links(@conn, :layout) %>
           </ul>
         </nav>
       </header>

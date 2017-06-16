@@ -1,5 +1,5 @@
-defmodule Web.ErrorView do
-  use Web.Web, :view
+defmodule FatTrack.Web.ErrorView do
+  use FatTrack.Web.Web, :view
 
   def render("404.html", _assigns) do
     "Page not found"

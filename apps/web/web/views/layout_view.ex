@@ -1,3 +1,3 @@
-defmodule Web.LayoutView do
-  use Web.Web, :view
+defmodule FatTrack.Web.LayoutView do
+  use FatTrack.Web.Web, :view
 end

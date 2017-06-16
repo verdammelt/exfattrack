@@ -22,7 +22,7 @@ defmodule Weights.Mixfile do
   def application do
     # Specify extra applications you'll use from Erlang/Elixir
     [extra_applications: [:logger, :postgrex, :db],
-     mod: {Weights.Application, []}]
+     mod: {FatTrack.Weights.Application, []}]
   end
 
   defp deps do

@@ -43,7 +43,7 @@ defmodule Coherence.Redirects do
   """
   use Redirects
   # Uncomment the import below if adding overrides
-  # import Web.Router.Helpers
+  # import FatTrack.Web.Router.Helpers
 
   # Add function overrides below
 
