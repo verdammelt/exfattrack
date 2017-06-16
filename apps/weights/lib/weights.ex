@@ -6,7 +6,7 @@ defmodule Weights do
   alias FatTrack.DB.Repo
 
   def for_user(user_id) do
-    Weights.User |>
+    Weights.DB.User |>
       Repo.get(user_id) |>
       Repo.preload([:weights]) |>
       Map.get(:weights)

@@ -3,8 +3,8 @@ defmodule WeightsTest do
   doctest Weights
 
   alias FatTrack.DB.Repo
-  alias Weights.Weight
-  alias Weights.User
+  alias Weights.DB.Weight
+  alias Weights.DB.User
 
   setup do
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(FatTrack.DB.Repo)
